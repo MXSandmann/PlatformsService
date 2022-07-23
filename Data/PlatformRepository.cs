@@ -19,6 +19,7 @@ namespace PlatformService.Data
             _context.Platforms.Add(platform);
         }
 
+
         public Platform Get(int id)
         {
             return _context.Platforms.FirstOrDefault(p => p.Id == id);
@@ -27,6 +28,14 @@ namespace PlatformService.Data
         public IEnumerable<Platform> GetAll()
         {
             return _context.Platforms.ToList();
+        }
+
+        public int Delete(int id)
+        {
+            var platformToDelete = _context.Platforms.FirstOrDefault(p => p.Id == id);
+            _context.Platforms.Remove(platformToDelete);    
+
+            return platformToDelete.Id;
         }
 
         public bool SaveChanges()

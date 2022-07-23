@@ -9,5 +9,7 @@ namespace PlatformService.Data
         IEnumerable<Platform> GetAll();
         Platform Get(int id);
         void Create(Platform platform);
+        int Delete(int id);
+        
     }
 }
