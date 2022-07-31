@@ -4,3 +4,5 @@ obj/**
 obj/
 bin/
 obj/Debug/net6.0/**
+.vscode/launch.json
+.vscode/tasks.json
