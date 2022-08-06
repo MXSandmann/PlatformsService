@@ -75,6 +75,10 @@ namespace PlatformService.Controllers
             Console.WriteLine($"--> Deleting a Platform with id {id}...");
 
             var deletedId = _repository.Delete(id);
+            
+            if (deletedId == null)
+                return NotFound($"A plarform with id {id} was not forund");
+
             _repository.SaveChanges();
 
             return Ok(deletedId);

@@ -30,9 +30,13 @@ namespace PlatformService.Data
             return _context.Platforms.ToList();
         }
 
-        public int Delete(int id)
+        public int? Delete(int id)
         {
             var platformToDelete = _context.Platforms.FirstOrDefault(p => p.Id == id);
+
+            if (platformToDelete == null)
+                return null;
+
             _context.Platforms.Remove(platformToDelete);    
 
             return platformToDelete.Id;
