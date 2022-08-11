@@ -22,7 +22,7 @@ namespace PlatformService.Data
 
         public Platform Get(int id)
         {
-            return _context.Platforms.FirstOrDefault(p => p.Id == id);
+            return _context.Platforms.FirstOrDefault(p => p.Id == id)!;
         }
 
         public IEnumerable<Platform> GetAll()

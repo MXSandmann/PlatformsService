@@ -5,12 +5,12 @@ namespace PlatformService.Dto
     public class PlatformCreateDto
     {
         [Required]
-        public string Name { get; set; }
+        public string Name { get; set; } = null!;
 
         [Required]
-        public string Publisher { get; set; }
+        public string Publisher { get; set; } = null!;
 
         [Required]
-        public string Cost { get; set; }
+        public string Cost { get; set; } = null!;
     }
 }
